@@ -3,63 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UniCue Demo</title>
+  <title>UniCue: Paper Demo</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 60px auto;
+      max-width: 1000px;
+      margin: 50px auto;
       padding: 0 20px;
-      line-height: 1.7;
       color: #222;
+      line-height: 1.7;
     }
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.3em;
+      font-size: 2.4rem;
+      margin-bottom: 10px;
     }
-    .subtitle {
-      color: #666;
-      margin-bottom: 2em;
+    .authors, .affiliation {
+      color: #555;
+      margin-bottom: 8px;
     }
-    .box {
+    .links a {
+      display: inline-block;
+      margin-right: 12px;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: #f6f8fa;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #0969da;
+      font-weight: bold;
+    }
+    .section {
+      margin-top: 40px;
+    }
+    .card {
       background: #f6f8fa;
       border-radius: 12px;
       padding: 20px;
-      margin: 20px 0;
+      margin-top: 15px;
     }
-    a {
-      color: #0969da;
-      text-decoration: none;
+    audio {
+      width: 100%;
+      margin-top: 10px;
     }
-    a:hover {
-      text-decoration: underline;
+    pre {
+      background: #f6f8fa;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
     }
   </style>
 </head>
 <body>
-  <h1>UniCue Demo</h1>
-  <p class="subtitle">Official demo page for our paper</p>
+  <h1>UniCue: A Unified Multi-Cue Benchmark and Conditioning Framework for Target Speaker Extraction</h1>
 
-  <div class="box">
-    <h2>Coming Soon</h2>
-    <p>We will release the following materials here:</p>
-    <ul>
-      <li>Paper link</li>
-      <li>Audio demo samples</li>
-      <li>Method overview</li>
-      <li>Code repository</li>
-      <li>Checkpoint / dataset details</li>
-    </ul>
+  <div class="authors">Author A, Author B, Author C</div>
+  <div class="affiliation">Your University / Lab Name</div>
+
+  <div class="links">
+    <a href="#">Paper</a>
+    <a href="#">Code</a>
+    <a href="#">Dataset</a>
   </div>
 
-  <div class="box">
-    <h2>Project Status</h2>
-    <p>This page is currently under construction.</p>
+  <div class="section">
+    <h2>Abstract</h2>
+    <div class="card">
+      <p>
+        This project page presents the demo for our paper. More details, audio examples,
+        and code will be released soon.
+      </p>
+    </div>
   </div>
 
-  <div class="box">
-    <h2>Contact</h2>
-    <p>Your Name / Team Name</p>
+  <div class="section">
+    <h2>Audio Demo</h2>
+    <div class="card">
+      <p><strong>Sample 1:</strong> mixture / target extraction / baseline / ours</p>
+      <audio controls>
+        <source src="demo/sample1.wav" type="audio/wav">
+      </audio>
+      <p>Audio samples will be uploaded soon.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Method Overview</h2>
+    <div class="card">
+      <p>Method figure will be added here.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Citation</h2>
+    <pre>
+@article{yourpaper2026,
+  title={UniCue: A Unified Multi-Cue Benchmark and Conditioning Framework for Target Speaker Extraction},
+  author={Author A and Author B and Author C},
+  journal={arXiv preprint arXiv:xxxx.xxxxx},
+  year={2026}
+}
+    </pre>
   </div>
 </body>
 </html>
