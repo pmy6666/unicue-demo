@@ -11,10 +11,10 @@
       <header class="hero">
         <div class="hero-copy">
           <p class="eyebrow">ACM MM 2026 Demo</p>
-          <h1>Multi-Modal Target Speech Extraction with Prompt Subset Analysis</h1>
+          <h1>Prompt Combination Matrix for Target Speech Extraction</h1>
           <p class="lede">
-            One mixture and fifteen prompt subsets, used to show how speaker, text, spatial,
-            and visual cues change extraction quality.
+            One mixture, two targets, and fifteen prompt combinations arranged in a unified
+            7-column matrix with consistent naming: visual, text, pre-enrollment, and spatial.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#demo">Explore Demo</a>
@@ -26,11 +26,11 @@
           <div class="hero-stats">
             <div>
               <strong>15</strong>
-              <span>Prompt subsets</span>
+              <span>Prompt combinations</span>
             </div>
             <div>
               <strong>4</strong>
-              <span>Cue types</span>
+              <span>Prompt types</span>
             </div>
             <div>
               <strong>1</strong>
@@ -44,26 +44,26 @@
         <section class="section section-grid" id="highlights">
           <article class="feature-card">
             <p class="card-index">01</p>
-            <h2>Prompt-Controllable Separation</h2>
+            <h2>Unified Prompt Naming</h2>
             <p>
-              The same acoustic scene can be queried by speaker enrollment, text semantics,
-              spatial sector, visual stream, or any subset fusion.
+              All prompt channels are shown with one consistent vocabulary: visual, text,
+              pre-enrollment, and spatial.
             </p>
           </article>
           <article class="feature-card">
             <p class="card-index">02</p>
-            <h2>Fifteen Prompt Subsets</h2>
+            <h2>Fixed 7 x 15 Layout</h2>
             <p>
-              We expose all non-empty subsets of four cue types to show where each cue is
-              sufficient, where it fails, and when fusion becomes decisive.
+              The main panel is now a fixed matrix with 7 columns and 15 rows, where every row
+              represents one prompt combination.
             </p>
           </article>
           <article class="feature-card">
             <p class="card-index">03</p>
-            <h2>Metric-Grounded Listening</h2>
+            <h2>Prompt Presence at a Glance</h2>
             <p>
-              Every audio result is paired with SI-SNRi, so listening impressions are aligned
-              with a standard separation metric.
+              Each row marks whether a prompt type is active, and unused prompt columns are shown
+              as a dash.
             </p>
           </article>
         </section>
@@ -71,7 +71,7 @@
         <section class="section overview" id="method">
           <div class="section-heading">
             <p class="eyebrow">Method Overview</p>
-            <h2>Four prompt channels, one extraction objective</h2>
+            <h2>Four prompt channels, one unified matrix</h2>
           </div>
           <div class="method-track">
             <div class="method-node">
@@ -81,13 +81,13 @@
             </div>
             <div class="method-node">
               <span class="node-label">Prompt Bank</span>
-              <strong>Speaker / Text / Spatial / Visual</strong>
-              <p>Four cue families evaluated independently and jointly</p>
+              <strong>Pre-enrollment / Text / Spatial / Visual</strong>
+              <p>Four prompt families evaluated independently and jointly</p>
             </div>
             <div class="method-node">
               <span class="node-label">Fusion</span>
-              <strong>Prompt Subset Conditioning</strong>
-              <p>Target-aware cue fusion inside the separator</p>
+              <strong>15 Prompt Combinations</strong>
+              <p>Each non-empty combination occupies one row in the matrix</p>
             </div>
             <div class="method-node">
               <span class="node-label">Output</span>
@@ -100,14 +100,12 @@
         <section class="section demo" id="demo">
           <div class="section-heading split">
             <div>
-              <p class="eyebrow">Interactive Benchmark</p>
-              <h2>One sample, all prompt subsets</h2>
+              <p class="eyebrow">Interactive Matrix</p>
+              <h2>One sample, fifteen prompt combinations</h2>
             </div>
             <div class="legend">
-              <span><i class="dot single"></i> Single modality</span>
-              <span><i class="dot dual"></i> Dual fusion</span>
-              <span><i class="dot triple"></i> Triple fusion</span>
-              <span><i class="dot full"></i> Full fusion</span>
+              <span><i class="dot active"></i> Prompt enabled</span>
+              <span><i class="dot inactive"></i> Prompt unused</span>
             </div>
           </div>
 
@@ -136,17 +134,18 @@
 
             <div class="workspace">
               <div class="metric-strip" id="metric-strip"></div>
-              <div class="subset-spotlight" id="subset-spotlight"></div>
-              <div class="subset-grid-header">
+              <div class="result-panel" id="result-panel"></div>
+              <div class="matrix-panel">
                 <div>
-                  <p class="block-title">Prompt Subset Gallery</p>
+                  <p class="block-title">Prompt Combination Matrix</p>
                   <p class="block-subtitle">
-                    Placeholder audio paths can be replaced after the evaluation pipeline exports
-                    real results.
+                    Click any row to inspect the selected target output. The first three columns
+                    stay fixed as mixed speech, target1, and target2; the last four columns show
+                    which prompts are active.
                   </p>
                 </div>
+                <div id="subset-grid" class="subset-grid"></div>
               </div>
-              <div id="subset-grid" class="subset-grid"></div>
             </div>
           </div>
         </section>
@@ -160,8 +159,8 @@
             <p>
               The page is already wired for real evaluation assets. Once your offline testing
               script exports wav files and SI-SNRi scores, update the sample entries in
-              <code>demo-data.js</code> and the cards will render the true results without
-              structural changes.
+              <code>demo-data.js</code> and the 15-row matrix will render the true results
+              without structural changes.
             </p>
           </div>
         </section>
