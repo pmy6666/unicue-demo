@@ -9,104 +9,79 @@
   <body>
     <div class="page-shell">
       <header class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">ACM MM 2026 Demo</p>
-          <h1>Prompt Combination Matrix for Target Speech Extraction</h1>
-          <p class="lede">
-            One mixture, two targets, and fifteen prompt combinations arranged in a unified
-            7-column matrix with consistent naming: visual, text, pre-enrollment, and spatial.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#demo">Explore Demo</a>
-            <a class="button secondary" href="#method">Method Overview</a>
-          </div>
+        <p class="eyebrow">ACM MM 2026 Demo</p>
+        <h1>Prompt Combination Matrix for Multi-Modal Target Speech Extraction</h1>
+        <p class="hero-subtitle">
+          A clean listening page for one shared mixture, two target references, and fifteen
+          prompt combinations over visual, text, pre-enrollment, and spatial prompts.
+        </p>
+        <div class="hero-meta">
+          <span>15 combinations</span>
+          <span>7-column matrix</span>
+          <span>Interactive audio inspection</span>
         </div>
-        <div class="hero-panel">
-          <div class="panel-kicker">Overview</div>
-          <div class="hero-stats">
-            <div>
-              <strong>15</strong>
-              <span>Prompt combinations</span>
-            </div>
-            <div>
-              <strong>4</strong>
-              <span>Prompt types</span>
-            </div>
-            <div>
-              <strong>1</strong>
-              <span>Shared mixture</span>
-            </div>
-          </div>
+        <div class="hero-actions">
+          <a class="button primary" href="#demo">Audio Demo</a>
+          <a class="button secondary" href="#abstract">Abstract</a>
+          <a class="button secondary" href="#method">Method</a>
         </div>
       </header>
 
       <main>
-        <section class="section section-grid" id="highlights">
-          <article class="feature-card">
-            <p class="card-index">01</p>
-            <h2>Unified Prompt Naming</h2>
-            <p>
-              All prompt channels are shown with one consistent vocabulary: visual, text,
-              pre-enrollment, and spatial.
-            </p>
-          </article>
-          <article class="feature-card">
-            <p class="card-index">02</p>
-            <h2>Fixed 7 x 15 Layout</h2>
-            <p>
-              The main panel is now a fixed matrix with 7 columns and 15 rows, where every row
-              represents one prompt combination.
-            </p>
-          </article>
-          <article class="feature-card">
-            <p class="card-index">03</p>
-            <h2>Prompt Presence at a Glance</h2>
-            <p>
-              Each row marks whether a prompt type is active, and unused prompt columns are shown
-              as a dash.
-            </p>
-          </article>
+        <section class="section narrative" id="abstract">
+          <div class="section-heading centered">
+            <h2>Abstract</h2>
+          </div>
+          <p class="narrative-copy">
+            This demo page organizes prompt-controlled target speech extraction into a single
+            comparison matrix. Each row corresponds to one non-empty combination of four prompt
+            types: <strong>visual</strong>, <strong>text</strong>,
+            <strong>pre-enrollment</strong>, and <strong>spatial</strong>. The layout is designed
+            to make listening comparisons direct and consistent across targets, while keeping the
+            naming and presentation simple enough for paper reviewers and demo visitors.
+          </p>
         </section>
 
-        <section class="section overview" id="method">
-          <div class="section-heading">
-            <p class="eyebrow">Method Overview</p>
-            <h2>Four prompt channels, one unified matrix</h2>
+        <section class="section method-overview" id="method">
+          <div class="section-heading centered">
+            <h2>Method Overview</h2>
+            <p class="section-subtitle">
+              A shared mixture is queried by four prompt channels and rendered as a fixed matrix
+              of fifteen prompt combinations.
+            </p>
           </div>
-          <div class="method-track">
-            <div class="method-node">
-              <span class="node-label">Input</span>
-              <strong>Mixture Audio</strong>
-              <p>Single test case or curated benchmark scene</p>
-            </div>
-            <div class="method-node">
-              <span class="node-label">Prompt Bank</span>
-              <strong>Pre-enrollment / Text / Spatial / Visual</strong>
-              <p>Four prompt families evaluated independently and jointly</p>
-            </div>
-            <div class="method-node">
-              <span class="node-label">Fusion</span>
-              <strong>15 Prompt Combinations</strong>
-              <p>Each non-empty combination occupies one row in the matrix</p>
-            </div>
-            <div class="method-node">
-              <span class="node-label">Output</span>
-              <strong>Separated Target Speech</strong>
-              <p>Audio playback and SI-SNRi side by side</p>
-            </div>
+          <div class="pipeline">
+            <article class="pipeline-step">
+              <span class="pipeline-index">01</span>
+              <h3>Input Mixture</h3>
+              <p>One overlapped acoustic scene used across all comparisons.</p>
+            </article>
+            <article class="pipeline-step">
+              <span class="pipeline-index">02</span>
+              <h3>Prompt Bank</h3>
+              <p>visual, text, pre-enrollment, and spatial prompts.</p>
+            </article>
+            <article class="pipeline-step">
+              <span class="pipeline-index">03</span>
+              <h3>15 Combinations</h3>
+              <p>Every non-empty subset is displayed as one row in the matrix.</p>
+            </article>
+            <article class="pipeline-step">
+              <span class="pipeline-index">04</span>
+              <h3>Separated Output</h3>
+              <p>Listen to the selected target output and compare SI-SNRi.</p>
+            </article>
           </div>
         </section>
 
         <section class="section demo" id="demo">
-          <div class="section-heading split">
-            <div>
-              <p class="eyebrow">Interactive Matrix</p>
-              <h2>One sample, fifteen prompt combinations</h2>
-            </div>
-            <div class="legend">
-              <span><i class="dot active"></i> Prompt enabled</span>
-              <span><i class="dot inactive"></i> Prompt unused</span>
-            </div>
+          <div class="section-heading centered">
+            <h2>Interactive Audio Demo</h2>
+            <p class="section-subtitle">
+              The first three columns remain fixed as mixture, target1, and target2. The final
+              four columns indicate which prompts are active in each row; unused prompts are
+              displayed as <code>-</code>.
+            </p>
           </div>
 
           <div class="demo-layout">
@@ -136,13 +111,17 @@
               <div class="metric-strip" id="metric-strip"></div>
               <div class="result-panel" id="result-panel"></div>
               <div class="matrix-panel">
-                <div>
-                  <p class="block-title">Prompt Combination Matrix</p>
-                  <p class="block-subtitle">
-                    Click any row to inspect the selected target output. The first three columns
-                    stay fixed as mixed speech, target1, and target2; the last four columns show
-                    which prompts are active.
-                  </p>
+                <div class="matrix-heading">
+                  <div>
+                    <p class="block-title">Prompt Combination Matrix</p>
+                    <p class="block-subtitle">
+                      Select any row to inspect the separated result for the current target.
+                    </p>
+                  </div>
+                  <div class="legend">
+                    <span><i class="dot active"></i> Prompt enabled</span>
+                    <span><i class="dot inactive"></i> Not used</span>
+                  </div>
                 </div>
                 <div id="subset-grid" class="subset-grid"></div>
               </div>
@@ -151,16 +130,12 @@
         </section>
 
         <section class="section footer-panel">
-          <div>
-            <p class="eyebrow">Deployment Notes</p>
-            <h2>Ready for real outputs</h2>
-          </div>
           <div class="footer-copy">
+            <h2>Ready For Real Evaluation Assets</h2>
             <p>
-              The page is already wired for real evaluation assets. Once your offline testing
-              script exports wav files and SI-SNRi scores, update the sample entries in
-              <code>demo-data.js</code> and the 15-row matrix will render the true results
-              without structural changes.
+              Replace the placeholder wav paths and metric values in <code>demo-data.js</code>,
+              and the page will render the full 15-row listening matrix without structural
+              changes.
             </p>
           </div>
         </section>
