@@ -1,108 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UniCue: Paper Demo</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 0 20px;
-      color: #222;
-      line-height: 1.7;
-    }
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-    }
-    .authors, .affiliation {
-      color: #555;
-      margin-bottom: 8px;
-    }
-    .links a {
-      display: inline-block;
-      margin-right: 12px;
-      margin-top: 10px;
-      padding: 10px 16px;
-      background: #f6f8fa;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #0969da;
-      font-weight: bold;
-    }
-    .section {
-      margin-top: 40px;
-    }
-    .card {
-      background: #f6f8fa;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 15px;
-    }
-    audio {
-      width: 100%;
-      margin-top: 10px;
-    }
-    pre {
-      background: #f6f8fa;
-      padding: 15px;
-      border-radius: 8px;
-      overflow-x: auto;
-    }
-  </style>
-</head>
-<body>
-  <h1>UniCue: A Unified Multi-Cue Benchmark and Conditioning Framework for Target Speaker Extraction</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MMTSE Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">ACM MM 2026 Demo</p>
+          <h1>Multi-Modal Target Speech Extraction with Prompt Subset Analysis</h1>
+          <p class="lede">
+            A single mixture, fifteen prompt subsets, and a controlled view of how speaker,
+            text, spatial, and visual cues shape separation quality.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#demo">Explore Demo</a>
+            <a class="button secondary" href="#method">Method Overview</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-kicker">What this page emphasizes</div>
+          <ul class="hero-points">
+            <li>One benchmark case shown under all 15 non-empty prompt subsets</li>
+            <li>Direct SI-SNRi comparison for prompt effectiveness</li>
+            <li>Fast inspection of single-modality and fused-prompt behavior</li>
+          </ul>
+          <div class="mini-flow">
+            <span>Mixture</span>
+            <span>Prompt Subset</span>
+            <span>Target Estimate</span>
+            <span>SI-SNRi</span>
+          </div>
+        </div>
+      </header>
 
-  <div class="authors">Author A, Author B, Author C</div>
-  <div class="affiliation">Your University / Lab Name</div>
+      <main>
+        <section class="section section-grid" id="highlights">
+          <article class="feature-card">
+            <p class="card-index">01</p>
+            <h2>Prompt-Controllable Separation</h2>
+            <p>
+              The same acoustic scene can be queried by speaker enrollment, text semantics,
+              spatial sector, visual stream, or any subset fusion.
+            </p>
+          </article>
+          <article class="feature-card">
+            <p class="card-index">02</p>
+            <h2>Fifteen Prompt Subsets</h2>
+            <p>
+              We expose all non-empty subsets of four cue types to show where each cue is
+              sufficient, where it fails, and when fusion becomes decisive.
+            </p>
+          </article>
+          <article class="feature-card">
+            <p class="card-index">03</p>
+            <h2>Metric-Grounded Listening</h2>
+            <p>
+              Every audio result is paired with SI-SNRi, so listening impressions are aligned
+              with a standard separation metric.
+            </p>
+          </article>
+        </section>
 
-  <div class="links">
-    <a href="#">Paper</a>
-    <a href="#">Code</a>
-    <a href="#">Dataset</a>
-  </div>
+        <section class="section overview" id="method">
+          <div class="section-heading">
+            <p class="eyebrow">Method Overview</p>
+            <h2>Four prompt channels, one extraction objective</h2>
+          </div>
+          <div class="method-track">
+            <div class="method-node">
+              <span class="node-label">Input</span>
+              <strong>Mixture Audio</strong>
+              <p>Single test case or curated benchmark scene</p>
+            </div>
+            <div class="method-node">
+              <span class="node-label">Prompt Bank</span>
+              <strong>Speaker / Text / Spatial / Visual</strong>
+              <p>Four cue families evaluated independently and jointly</p>
+            </div>
+            <div class="method-node">
+              <span class="node-label">Fusion</span>
+              <strong>Prompt Subset Conditioning</strong>
+              <p>Target-aware cue fusion inside the separator</p>
+            </div>
+            <div class="method-node">
+              <span class="node-label">Output</span>
+              <strong>Separated Target Speech</strong>
+              <p>Audio playback and SI-SNRi side by side</p>
+            </div>
+          </div>
+        </section>
 
-  <div class="section">
-    <h2>Abstract</h2>
-    <div class="card">
-      <p>
-        This project page presents the demo for our paper. More details, audio examples,
-        and code will be released soon.
-      </p>
+        <section class="section demo" id="demo">
+          <div class="section-heading split">
+            <div>
+              <p class="eyebrow">Interactive Benchmark</p>
+              <h2>One sample, all prompt subsets</h2>
+            </div>
+            <div class="legend">
+              <span><i class="dot single"></i> Single modality</span>
+              <span><i class="dot dual"></i> Dual fusion</span>
+              <span><i class="dot triple"></i> Triple fusion</span>
+              <span><i class="dot full"></i> Full fusion</span>
+            </div>
+          </div>
+
+          <div class="demo-layout">
+            <aside class="sidebar">
+              <div class="control-block">
+                <p class="block-title">Test Cases</p>
+                <div id="sample-tabs" class="sample-tabs"></div>
+              </div>
+
+              <div class="control-block">
+                <p class="block-title">Target Focus</p>
+                <div id="target-tabs" class="target-tabs"></div>
+              </div>
+
+              <div class="control-block">
+                <p class="block-title">Case Notes</p>
+                <div id="case-summary" class="case-summary"></div>
+              </div>
+
+              <div class="control-block">
+                <p class="block-title">Reference Audio</p>
+                <div id="reference-audio" class="reference-audio"></div>
+              </div>
+            </aside>
+
+            <div class="workspace">
+              <div class="metric-strip" id="metric-strip"></div>
+              <div class="subset-spotlight" id="subset-spotlight"></div>
+              <div class="subset-grid-header">
+                <div>
+                  <p class="block-title">Prompt Subset Gallery</p>
+                  <p class="block-subtitle">
+                    Replace placeholder audio paths in <code>demo-data.js</code> after the
+                    evaluation pipeline exports real wav files.
+                  </p>
+                </div>
+              </div>
+              <div id="subset-grid" class="subset-grid"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section footer-panel">
+          <div>
+            <p class="eyebrow">Deployment Notes</p>
+            <h2>Ready for real outputs</h2>
+          </div>
+          <div class="footer-copy">
+            <p>
+              The page is already wired for real evaluation assets. Once your offline testing
+              script exports wav files and SI-SNRi scores, update the sample entries in
+              <code>demo-data.js</code> and the cards will render the true results without
+              structural changes.
+            </p>
+          </div>
+        </section>
+      </main>
     </div>
-  </div>
 
-  <div class="section">
-    <h2>Audio Demo</h2>
-    <div class="card">
-      <p><strong>Sample 1:</strong> mixture / target extraction / baseline / ours</p>
-      <audio controls>
-        <source src="demo/sample1.wav" type="audio/wav">
-      </audio>
-      <p>Audio samples will be uploaded soon.</p>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Method Overview</h2>
-    <div class="card">
-      <p>Method figure will be added here.</p>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Citation</h2>
-    <pre>
-@article{yourpaper2026,
-  title={UniCue: A Unified Multi-Cue Benchmark and Conditioning Framework for Target Speaker Extraction},
-  author={Author A and Author B and Author C},
-  journal={arXiv preprint arXiv:xxxx.xxxxx},
-  year={2026}
-}
-    </pre>
-  </div>
-</body>
+    <script src="./demo-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
 </html>
