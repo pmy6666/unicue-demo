@@ -78,54 +78,26 @@
           <div class="section-heading centered">
             <h2>Interactive Audio Demo</h2>
             <p class="section-subtitle">
-              The first three columns remain fixed as mixture, target1, and target2. The final
-              four columns indicate which prompts are active in each row; unused prompts are
-              displayed as <code>-</code>.
+              The demo now focuses only on the 7-column matrix. The first three columns remain
+              fixed as mixture, target1, and target2, while the final four columns indicate which
+              prompts are active in each row.
             </p>
           </div>
 
-          <div class="demo-layout">
-            <aside class="sidebar">
-              <div class="control-block">
-                <p class="block-title">Test Cases</p>
-                <div id="sample-tabs" class="sample-tabs"></div>
+          <div class="matrix-panel matrix-panel-standalone">
+            <div class="matrix-heading">
+              <div>
+                <p class="block-title">Prompt Combination Matrix</p>
+                <p class="block-subtitle">
+                  Fifteen rows correspond to fifteen non-empty prompt combinations.
+                </p>
               </div>
-
-              <div class="control-block">
-                <p class="block-title">Target Focus</p>
-                <div id="target-tabs" class="target-tabs"></div>
-              </div>
-
-              <div class="control-block">
-                <p class="block-title">Case Notes</p>
-                <div id="case-summary" class="case-summary"></div>
-              </div>
-
-              <div class="control-block">
-                <p class="block-title">Reference Audio</p>
-                <div id="reference-audio" class="reference-audio"></div>
-              </div>
-            </aside>
-
-            <div class="workspace">
-              <div class="metric-strip" id="metric-strip"></div>
-              <div class="result-panel" id="result-panel"></div>
-              <div class="matrix-panel">
-                <div class="matrix-heading">
-                  <div>
-                    <p class="block-title">Prompt Combination Matrix</p>
-                    <p class="block-subtitle">
-                      Select any row to inspect the separated result for the current target.
-                    </p>
-                  </div>
-                  <div class="legend">
-                    <span><i class="dot active"></i> Prompt enabled</span>
-                    <span><i class="dot inactive"></i> Not used</span>
-                  </div>
-                </div>
-                <div id="subset-grid" class="subset-grid"></div>
+              <div class="legend">
+                <span><i class="dot active"></i> Prompt enabled</span>
+                <span><i class="dot inactive"></i> Not used</span>
               </div>
             </div>
+            <div id="subset-grid" class="subset-grid"></div>
           </div>
         </section>
 

@@ -189,9 +189,7 @@ audio {
   gap: 16px;
 }
 
-.pipeline-step,
-.control-block,
-.metric-card {
+.pipeline-step {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface-soft);
@@ -210,19 +208,13 @@ audio {
   letter-spacing: 0.12em;
 }
 
-.pipeline-step h3,
-.audio-block h3,
-.result-panel h3 {
+.pipeline-step h3 {
   margin: 0;
   font-size: 1.08rem;
 }
 
 .pipeline-step p,
-.audio-block p,
-.summary-note,
 .block-subtitle,
-.result-note,
-.metric-card p,
 .footer-copy p {
   color: var(--muted);
   line-height: 1.7;
@@ -230,23 +222,6 @@ audio {
 
 .pipeline-step p {
   margin: 10px 0 0;
-}
-
-.demo-layout {
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 22px;
-  align-items: start;
-}
-
-.sidebar,
-.workspace {
-  display: grid;
-  gap: 16px;
-}
-
-.control-block {
-  padding: 18px;
 }
 
 .block-title {
@@ -258,185 +233,15 @@ audio {
   text-transform: uppercase;
 }
 
-.sample-tabs,
-.target-tabs,
-.reference-audio,
-.case-summary {
-  display: grid;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.sample-tab,
-.target-tab {
-  width: 100%;
-  padding: 13px 14px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #fff;
-  color: var(--ink);
-  text-align: left;
-  cursor: pointer;
-  transition: border-color 160ms ease, background 160ms ease;
-}
-
-.sample-tab strong,
-.target-tab strong {
-  display: block;
-  margin-bottom: 4px;
-}
-
-.sample-tab.active,
-.target-tab.active,
-.sample-tab:hover,
-.target-tab:hover {
-  border-color: #90b3e5;
-  background: var(--accent-soft);
-}
-
-.summary-note,
-.audio-block {
-  padding: 12px 14px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #fff;
-}
-
-.summary-note.emphasis {
-  border-color: #9ab8e6;
-  background: #f3f8ff;
-}
-
-.audio-block h3 {
-  margin-bottom: 8px;
-}
-
-.audio-block p {
-  margin: 8px 0 0;
-  word-break: break-all;
-  font-size: 0.9rem;
-}
-
-.metric-strip {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.metric-card {
-  padding: 18px;
-}
-
-.metric-card h3 {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.metric-card strong {
-  display: block;
-  margin-top: 12px;
-  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  font-size: clamp(1.45rem, 2.5vw, 2.1rem);
-}
-
-.metric-card p {
-  margin: 8px 0 0;
-}
-
-.result-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) 220px minmax(260px, 0.8fr);
-  gap: 14px;
-  padding: 20px;
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius-lg);
-  background: var(--surface-soft);
-}
-
-.result-panel h3 {
-  font-size: 1.4rem;
-}
-
-.result-note {
-  margin: 10px 0 0;
-}
-
-.result-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.result-tag {
-  min-width: 120px;
-  padding: 8px 10px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: #fff;
-  color: var(--muted);
-  font-size: 0.84rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.result-tag.active {
-  border-color: #97b9ec;
-  background: var(--accent-soft);
-  color: var(--accent-strong);
-}
-
-.result-metrics {
-  display: grid;
-  gap: 10px;
-}
-
-.meta-box {
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #fff;
-}
-
-.meta-box span {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
-.meta-box strong {
-  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  font-size: 1.08rem;
-}
-
-.result-audio {
-  display: grid;
-  gap: 10px;
-  align-content: start;
-}
-
-.placeholder {
-  margin: 0;
-  padding: 10px 12px;
-  border-radius: 10px;
-  background: #f0f4f8;
-  color: #607086;
-  font-size: 0.88rem;
-  word-break: break-all;
-}
-
 .matrix-panel {
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-lg);
   background: var(--surface);
   overflow: hidden;
+}
+
+.matrix-panel-standalone {
+  margin-top: 8px;
 }
 
 .matrix-heading {
@@ -596,9 +401,6 @@ audio {
 
 @media (max-width: 1160px) {
   .pipeline,
-  .demo-layout,
-  .metric-strip,
-  .result-panel,
   .matrix-heading {
     grid-template-columns: 1fr;
   }
@@ -630,10 +432,5 @@ audio {
 
   .hero h1 {
     max-width: none;
-  }
-
-  .result-tags {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
